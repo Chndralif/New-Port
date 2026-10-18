@@ -1,290 +1,492 @@
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chandra Alif - iOS Bento Portfolio</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font & Icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        body { font-family: 'Poppins', sans-serif; overflow-x: hidden; }
-        .font-jakarta-bold { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; }
-        .font-jakarta-extrabold { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; }
+      body {
+        font-family: 'Poppins', sans-serif;
+        overflow-x: hidden;
+      }
+      .font-jakarta-bold {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-weight: 700;
+      }
+      .font-jakarta-extrabold {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-weight: 800;
+      }
 
-        /* iOS Glassmorphism Widget */
-        .ios-widget {
-            background: rgba(255, 255, 255, 0.04);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.3s ease, box-shadow 0.3s ease;
-        }
+      /* iOS Glassmorphism Widget */
+      .ios-widget {
+        background: rgba(255, 255, 255, 0.04);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+          border-color 0.3s ease, box-shadow 0.3s ease;
+      }
 
-        .ios-widget:hover {
-            border-color: rgba(168, 85, 247, 0.5);
-            box-shadow: 0 12px 40px rgba(168, 85, 247, 0.18);
-            transform: translateY(-4px);
-        }
+      .ios-widget:hover {
+        border-color: rgba(168, 85, 247, 0.5);
+        box-shadow: 0 12px 40px rgba(168, 85, 247, 0.18);
+        transform: translateY(-4px);
+      }
 
-        /* iOS Click / Tap Haptic Spring Animation */
-        .ios-widget:active, .ios-btn:active {
-            transform: scale(0.95) !important;
-            transition: transform 0.1s cubic-bezier(0, 0, 0.2, 1) !important;
-        }
+      /* iOS Click / Tap Haptic Spring Animation */
+      .ios-widget:active,
+      .ios-btn:active {
+        transform: scale(0.95) !important;
+        transition: transform 0.1s cubic-bezier(0, 0, 0.2, 1) !important;
+      }
 
-        /* Gradient Glow Background Parallax */
-        .parallax-bg {
-            background-image: radial-gradient(circle at 50% 20%, rgba(147, 51, 234, 0.2), transparent 70%),
-                              radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.15), transparent 60%);
-            background-attachment: fixed;
-        }
+      /* Gradient Glow Background Parallax */
+      .parallax-bg {
+        background-image: radial-gradient(
+            circle at 50% 20%,
+            rgba(147, 51, 234, 0.2),
+            transparent 70%
+          ),
+          radial-gradient(
+            circle at 80% 80%,
+            rgba(236, 72, 153, 0.15),
+            transparent 60%
+          );
+        background-attachment: fixed;
+      }
     </style>
-</head>
-<body class="bg-gray-950 text-gray-100 antialiased selection:bg-purple-500 selection:text-white relative parallax-bg min-h-screen pb-16">
-
+  </head>
+  <body
+    class="bg-gray-950 text-gray-100 antialiased selection:bg-purple-500 selection:text-white relative parallax-bg min-h-screen pb-16"
+  >
     <!-- Header Navigation Bar ala Dynamic Island iOS -->
     <header class="fixed top-4 inset-x-0 z-50 flex justify-center px-4">
-        <nav class="ios-widget px-6 py-2.5 rounded-full flex items-center justify-between gap-6 max-w-4xl w-full shadow-2xl bg-gray-950/70 border-white/10">
-            <a href="https://drive.google.com/uc?export=download&id=1sEsAyS16sto6oIHlfsPj18iAt1wgiNOH" target="_blank" class="flex items-center gap-3 group">
-                <div class="relative w-8 h-8 rounded-full overflow-hidden border border-white/80 shadow-inner">
-                    <img src="https://lh3.googleusercontent.com/d/1SZNLDT7DlyNr403trqXjp-vsv67E5UEE" alt="Chandra Alif" class="w-Full h-150 object-cover object-bottom scale-110">
-                </div>
-                <span class="text-sm font-jakarta-extrabold tracking-wider bg-gradient-to-r from-purple-400 via-pink-400 to-red-400 bg-clip-text text-transparent">CHANDRA ALIF</span>
-            </a>
+      <nav
+        class="ios-widget px-6 py-2.5 rounded-full flex items-center justify-between gap-6 max-w-4xl w-full shadow-2xl bg-gray-950/70 border-white/10"
+      >
+        <a
+          href="https://drive.google.com/uc?export=download&id=1sEsAyS16sto6oIHlfsPj18iAt1wgiNOH"
+          target="_blank"
+          class="flex items-center gap-3 group"
+        >
+          <div
+            class="relative w-8 h-8 rounded-full overflow-hidden border border-white/80 shadow-inner"
+          >
+            <img
+              src="https://lh3.googleusercontent.com/d/1SZNLDT7DlyNr403trqXjp-vsv67E5UEE"
+              alt="Chandra Alif"
+              class="w-Full h-150 object-cover object-bottom scale-110"
+            />
+          </div>
+          <span
+            class="text-sm font-jakarta-extrabold tracking-wider bg-gradient-to-r from-purple-400 via-pink-400 to-red-400 bg-clip-text text-transparent"
+            >PORTOFOLIO</span
+          >
+        </a>
 
-            <div class="hidden md:flex items-center gap-6 text-xs font-jakarta-bold text-gray-300">
-                <a href="#bento-grid" class="hover:text-purple-400 transition">Showcase</a>
-                <a href="#tentang" class="hover:text-purple-400 transition">Profil</a>
-                <a href="#pengalaman" class="hover:text-purple-400 transition">Pengalaman</a>
-                <a href="#kontak" class="hover:text-purple-400 transition">Kontak</a>
-            </div>
+        <div
+          class="hidden md:flex items-center gap-6 text-xs font-jakarta-bold text-gray-300"
+        >
+          <a href="#bento-grid" class="hover:text-purple-400 transition"
+            >Showcase</a
+          >
+          <a href="#tentang" class="hover:text-purple-400 transition">Profil</a>
+          <a href="#pengalaman" class="hover:text-purple-400 transition"
+            >Pengalaman</a
+          >
+          <a href="#kontak" class="hover:text-purple-400 transition">Kontak</a>
+        </div>
 
-            <a href="https://wa.me/6285738093275" target="_blank" class="ios-btn px-4 py-1.5 text-xs font-jakarta-bold rounded-full bg-purple-600 hover:bg-purple-500 text-white shadow-lg shadow-purple-600/30 flex items-center gap-1.5 transition">
-                <i class="fa-brands fa-whatsapp"></i>
-                <span>Hubungi</span>
-            </a>
-        </nav>
+        <a
+          href="https://wa.me/6285738093275"
+          target="_blank"
+          class="ios-btn px-4 py-1.5 text-xs font-jakarta-bold rounded-full bg-purple-600 hover:bg-purple-500 text-white shadow-lg shadow-purple-600/30 flex items-center gap-1.5 transition"
+        >
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>Hubungi</span>
+        </a>
+      </nav>
     </header>
 
     <!-- Main Container Bento Grid Layout -->
-    <main id="bento-grid" class="max-w-6xl mx-auto px-4 pt-28 relative z-10 space-y-6">
+    <main
+      id="bento-grid"
+      class="max-w-6xl mx-auto px-4 pt-28 relative z-10 space-y-6"
+    >
+      <!-- SECTION 1: HERO BENTO SHOWCASE GRID -->
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <!-- 1. Hero Card (Profile & Bio) - Spans 2 Columns -->
+        <div
+          class="ios-widget p-6 md:p-8 rounded-[2.5rem] md:col-span-2 flex flex-col justify-between relative overflow-hidden group"
+        >
+          <div
+            class="absolute -right-10 -bottom-10 w-48 h-48 bg-purple-600/20 rounded-full blur-3xl pointer-events-none"
+          ></div>
 
-        <!-- SECTION 1: HERO BENTO SHOWCASE GRID -->
-        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            
-            <!-- 1. Hero Card (Profile & Bio) - Spans 2 Columns -->
-            <div class="ios-widget p-6 md:p-8 rounded-[2.5rem] md:col-span-2 flex flex-col justify-between relative overflow-hidden group">
-                <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-purple-600/20 rounded-full blur-3xl pointer-events-none"></div>
-                
-                <div class="flex items-center gap-4 mb-6">
-                    <div class="relative w-20 h-20 rounded-full overflow-hidden border-2 border-white/80 shadow-xl group-hover:scale-105 transition duration-300">
-                        <img src="https://lh3.googleusercontent.com/d/1SZNLDT7DlyNr403trqXjp-vsv67E5UEE" alt="Chandra Alif" class="w-Full h-150 object-cover object-bottom scale-110">
-                    </div>
-                    <div>
-                        <span class="px-3 py-1 text-[10px] font-jakarta-bold uppercase tracking-wider text-purple-300 bg-purple-950/80 border border-purple-500/30 rounded-full">
-                            Banyuwangi, Jatim
-                        </span>
-                        <h1 class="text-2xl md:text-3xl font-jakarta-extrabold text-white mt-1">Chandra Alif</h1>
-                        <p class="text-xs text-purple-300 font-medium">Video Editor & Creative Designer</p>
-                    </div>
-                </div>
-
-                <p class="text-gray-300 text-sm md:text-base leading-relaxed mb-6">
-                    Spesialis penyuntingan video & grafis kreatif dengan pengalaman <strong class="text-white font-jakarta-bold">4 tahun</strong> dalam memproduksi konten visual yang memikat.
-                </p>
-
-                <div class="flex flex-wrap gap-2">
-                    <a href="#kontak" class="ios-btn px-5 py-2.5 rounded-2xl bg-purple-600 hover:bg-purple-500 text-white font-jakarta-bold text-xs shadow-lg shadow-purple-600/30 flex items-center gap-2">
-                        <i class="fa-solid fa-paper-plane"></i>
-                        <span>Diskusi Proyek</span>
-                    </a>
-                    <a href="https://drive.google.com/uc?export=download&id=1sEsAyS16sto6oIHlfsPj18iAt1wgiNOH" target="_blank" class="ios-btn px-5 py-2.5 rounded-2xl bg-white/10 hover:bg-white/20 text-white border border-white/15 font-jakarta-bold text-xs flex items-center gap-2">
-                        <i class="fa-solid fa-file-pdf text-pink-400"></i>
-                        <span>Unduh CV</span>
-                    </a>
-                </div>
+          <div class="flex items-center gap-4 mb-6">
+            <div
+              class="relative w-20 h-20 rounded-full overflow-hidden border-2 border-white/80 shadow-xl group-hover:scale-105 transition duration-300"
+            >
+              <img
+                src="https://lh3.googleusercontent.com/d/1SZNLDT7DlyNr403trqXjp-vsv67E5UEE"
+                alt="Chandra Alif"
+                class="w-Full h-150 object-cover object-bottom scale-110"
+              />
             </div>
-
-            <!-- 2. Showreel Video Player Widget - Spans 2 Columns -->
-            <div class="ios-widget p-3 rounded-[2.5rem] md:col-span-2 flex flex-col justify-between bg-black/40">
-                <div class="w-full aspect-video rounded-[2rem] overflow-hidden bg-black relative flex items-center justify-center group">
-                    <video autoplay muted loop playsinline class="w-full h-full object-contain">
-                        <source src="Video Rollplay.mp4" type="video/mp4">
-                        Browser Anda tidak mendukung pemutar video.
-                    </video>
-                    <!-- iOS Player Badge -->
-                    <div class="absolute top-3 left-3 px-3 py-1 bg-black/60 backdrop-blur-md rounded-full border border-white/20 text-[10px] font-jakarta-bold text-white flex items-center gap-1.5">
-                        <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-                        <span>Showreel Animation</span>
-                    </div>
-                </div>
-
-                <div class="p-4 flex items-center justify-between gap-2">
-                    <div>
-                        <h3 class="font-jakarta-bold text-white text-sm">Pratinjau Hasil Karya</h3>
-                        <p class="text-xs text-gray-400">Putar langsung atau buka folder Drive</p>
-                    </div>
-                    <a href="https://drive.google.com/drive/folders/1Sz8rbhoQGR4iKI2GvXmKp-kaeuEN39Gs?usp=sharing" target="_blank" class="ios-btn px-4 py-2 bg-purple-600/80 hover:bg-purple-600 text-white text-xs font-jakarta-bold rounded-xl flex items-center gap-1.5 shadow-md">
-                        <span>Buka Drive</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                    </a>
-                </div>
+            <div>
+              <span
+                class="px-3 py-1 text-[10px] font-jakarta-bold uppercase tracking-wider text-purple-300 bg-purple-950/80 border border-purple-500/30 rounded-full"
+              >
+                Banyuwangi, Jatim
+              </span>
+              <h1
+                class="text-2xl md:text-3xl font-jakarta-extrabold text-white mt-1"
+              >
+                Chandra Alif
+              </h1>
+              <p class="text-xs text-purple-300 font-medium">
+                Video Editor & Creative Designer
+              </p>
             </div>
+          </div>
+
+          <p class="text-gray-300 text-sm md:text-base leading-relaxed mb-6">
+            Spesialis penyuntingan video & grafis kreatif dengan pengalaman
+            <strong class="text-white font-jakarta-bold">4 tahun</strong> dalam
+            memproduksi konten visual yang memikat.
+          </p>
+
+          <div class="flex flex-wrap gap-2">
+            <a
+              href="#kontak"
+              class="ios-btn px-5 py-2.5 rounded-2xl bg-purple-600 hover:bg-purple-500 text-white font-jakarta-bold text-xs shadow-lg shadow-purple-600/30 flex items-center gap-2"
+            >
+              <i class="fa-solid fa-paper-plane"></i>
+              <span>Diskusi Proyek</span>
+            </a>
+            <a
+              href="https://drive.google.com/uc?export=download&id=1sEsAyS16sto6oIHlfsPj18iAt1wgiNOH"
+              target="_blank"
+              class="ios-btn px-5 py-2.5 rounded-2xl bg-white/10 hover:bg-white/20 text-white border border-white/15 font-jakarta-bold text-xs flex items-center gap-2"
+            >
+              <i class="fa-solid fa-file-pdf text-pink-400"></i>
+              <span>Unduh CV</span>
+            </a>
+          </div>
         </div>
 
-        <!-- SECTION 2: KEAHLIAN BENTO BOXES (6 WIDGETS) -->
-        <div class="space-y-3">
-            <h2 class="text-xl font-jakarta-extrabold text-white px-2 flex items-center gap-2">
-                <i class="fa-solid fa-shapes text-purple-400 text-base"></i>
-                <span>Kemampuan Utama</span>
+        <!-- 2. Showreel Video Player Widget - Spans 2 Columns -->
+        <div
+          class="ios-widget p-3 rounded-[2.5rem] md:col-span-2 flex flex-col justify-between bg-black/40"
+        >
+          <div
+            class="w-full aspect-video rounded-[2rem] overflow-hidden bg-black relative flex items-center justify-center group"
+          >
+            <video
+              autoplay
+              muted
+              loop
+              playsinline
+              class="w-full h-full object-contain"
+            >
+              <source src="Video Rollplay.mp4" type="video/mp4" />
+              Browser Anda tidak mendukung pemutar video.
+            </video>
+            <!-- iOS Player Badge -->
+            <div
+              class="absolute top-3 left-3 px-3 py-1 bg-black/60 backdrop-blur-md rounded-full border border-white/20 text-[10px] font-jakarta-bold text-white flex items-center gap-1.5"
+            >
+              <span
+                class="w-2 h-2 rounded-full bg-red-500 animate-pulse"
+              ></span>
+              <span>Showreel Animation</span>
+            </div>
+          </div>
+
+          <div class="p-4 flex items-center justify-between gap-2">
+            <div>
+              <h3 class="font-jakarta-bold text-white text-sm">
+                Pratinjau Hasil Karya
+              </h3>
+              <p class="text-xs text-gray-400">
+                Hasil Karya Bisa cek di Kolom Sebelah >
+              </p>
+            </div>
+            <a
+              href="https://drive.google.com/drive/folders/1Sz8rbhoQGR4iKI2GvXmKp-kaeuEN39Gs?usp=sharing"
+              target="_blank"
+              class="ios-btn px-4 py-2 bg-purple-600/80 hover:bg-purple-600 text-white text-xs font-jakarta-bold rounded-xl flex items-center gap-1.5 shadow-md"
+            >
+              <span>Buka Drive</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 2: KEAHLIAN BENTO BOXES (6 WIDGETS) -->
+      <div class="space-y-3">
+        <h2
+          class="text-xl font-jakarta-extrabold text-white px-2 flex items-center gap-2"
+        >
+          <i class="fa-solid fa-shapes text-purple-400 text-base"></i>
+          <span>Kemampuan Utama</span>
+        </h2>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+          <div
+            class="ios-widget p-4 rounded-3xl text-center flex flex-col items-center justify-center h-32"
+          >
+            <i class="fa-solid fa-film text-2xl text-purple-400 mb-2"></i>
+            <h3 class="font-jakarta-bold text-white text-xs">Premiere Pro</h3>
+          </div>
+          <div
+            class="ios-widget p-4 rounded-3xl text-center flex flex-col items-center justify-center h-32"
+          >
+            <i
+              class="fa-solid fa-wand-magic-sparkles text-2xl text-purple-400 mb-2"
+            ></i>
+            <h3 class="font-jakarta-bold text-white text-xs">After Effects</h3>
+          </div>
+          <div
+            class="ios-widget p-4 rounded-3xl text-center flex flex-col items-center justify-center h-32"
+          >
+            <i class="fa-solid fa-cubes text-2xl text-purple-400 mb-2"></i>
+            <h3 class="font-jakarta-bold text-white text-xs">
+              2D & 3D Animation
+            </h3>
+          </div>
+          <div
+            class="ios-widget p-4 rounded-3xl text-center flex flex-col items-center justify-center h-32"
+          >
+            <i
+              class="fa-solid fa-camera-retro text-2xl text-purple-400 mb-2"
+            ></i>
+            <h3 class="font-jakarta-bold text-white text-xs">Photo Retouch</h3>
+          </div>
+          <div
+            class="ios-widget p-4 rounded-3xl text-center flex flex-col items-center justify-center h-32"
+          >
+            <i class="fa-solid fa-headphones text-2xl text-purple-400 mb-2"></i>
+            <h3 class="font-jakarta-bold text-white text-xs">Audio Design</h3>
+          </div>
+          <div
+            class="ios-widget p-4 rounded-3xl text-center flex flex-col items-center justify-center h-32"
+          >
+            <i
+              class="fa-solid fa-laptop-code text-2xl text-purple-400 mb-2"
+            ></i>
+            <h3 class="font-jakarta-bold text-white text-xs">
+              Web Design
+              <span class="text-[9px] text-purple-300 font-normal block"
+                >(Beginner)</span
+              >
+            </h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 3: TENTANG & PENGALAMAN WORK BENTO -->
+      <div id="pengalaman" class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4">
+        <!-- Widget Ringkasan Pengalaman -->
+        <div class="ios-widget p-6 rounded-[2.5rem] md:col-span-2 space-y-4">
+          <div
+            class="flex items-center justify-between border-b border-white/10 pb-3"
+          >
+            <h2
+              class="text-lg font-jakarta-extrabold text-white flex items-center gap-2"
+            >
+              <i class="fa-solid fa-briefcase text-purple-400"></i>
+              <span>Pengalaman Kerja</span>
             </h2>
+            <span
+              class="text-[10px] text-purple-300 bg-purple-950/80 px-2.5 py-1 rounded-full font-jakarta-bold"
+              >2021 - 2026</span
+            >
+          </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
-                <div class="ios-widget p-4 rounded-3xl text-center flex flex-col items-center justify-center h-32">
-                    <i class="fa-solid fa-film text-2xl text-purple-400 mb-2"></i>
-                    <h3 class="font-jakarta-bold text-white text-xs">Premiere Pro</h3>
-                </div>
-                <div class="ios-widget p-4 rounded-3xl text-center flex flex-col items-center justify-center h-32">
-                    <i class="fa-solid fa-wand-magic-sparkles text-2xl text-purple-400 mb-2"></i>
-                    <h3 class="font-jakarta-bold text-white text-xs">After Effects</h3>
-                </div>
-                <div class="ios-widget p-4 rounded-3xl text-center flex flex-col items-center justify-center h-32">
-                    <i class="fa-solid fa-cubes text-2xl text-purple-400 mb-2"></i>
-                    <h3 class="font-jakarta-bold text-white text-xs">2D & 3D Animation</h3>
-                </div>
-                <div class="ios-widget p-4 rounded-3xl text-center flex flex-col items-center justify-center h-32">
-                    <i class="fa-solid fa-camera-retro text-2xl text-purple-400 mb-2"></i>
-                    <h3 class="font-jakarta-bold text-white text-xs">Photo Retouch</h3>
-                </div>
-                <div class="ios-widget p-4 rounded-3xl text-center flex flex-col items-center justify-center h-32">
-                    <i class="fa-solid fa-headphones text-2xl text-purple-400 mb-2"></i>
-                    <h3 class="font-jakarta-bold text-white text-xs">Audio Design</h3>
-                </div>
-                <div class="ios-widget p-4 rounded-3xl text-center flex flex-col items-center justify-center h-32">
-                    <i class="fa-solid fa-laptop-code text-2xl text-purple-400 mb-2"></i>
-                    <h3 class="font-jakarta-bold text-white text-xs">Web Design <span class="text-[9px] text-purple-300 font-normal block">(Beginner)</span></h3>
-                </div>
+          <div class="space-y-4">
+            <!-- PT Sekolah Trading -->
+            <div
+              class="p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-purple-500/30 transition"
+            >
+              <div class="flex justify-between items-center mb-1">
+                <h3 class="font-jakarta-bold text-white text-sm">
+                  PT SEKOLAH TRADING
+                </h3>
+                <span class="text-[10px] text-purple-300 font-semibold"
+                  >Jun 2022 - Sekarang</span
+                >
+              </div>
+              <p class="text-xs text-purple-400 font-medium mb-2">
+                Editor Video & Film
+              </p>
+              <p class="text-xs text-gray-300 leading-relaxed">
+                Mengedit konten video (Reels, TikTok,Youtube), menyusun konsep
+                visual, hook interaktif, ide konten kreatif, serta mengelola
+                proses editing hingga finalization.
+              </p>
             </div>
+
+            <!-- Forex IMF -->
+            <div
+              class="p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-purple-500/30 transition"
+            >
+              <div class="flex justify-between items-center mb-1">
+                <h3 class="font-jakarta-bold text-white text-sm">
+                  Forex IMF / Quickpro
+                </h3>
+                <span class="text-[10px] text-purple-300 font-semibold"
+                  >Apr 2024 - Feb 2026</span
+                >
+              </div>
+              <p class="text-xs text-purple-400 font-medium mb-2">
+                Editor Video & Film
+              </p>
+              <p class="text-xs text-gray-300 leading-relaxed">
+                Memproduksi video promosi, menyempurnakan script, memimpin
+                koordinasi alur kerja editing tim, dan menjaga quality control.
+              </p>
+            </div>
+
+            <!-- Culinary -->
+            <div class="p-4 rounded-2xl bg-white/5 border border-white/5">
+              <h3 class="font-jakarta-bold text-white text-xs mb-1">
+                Pengalaman Kuliner & Hospitality
+              </h3>
+              <p class="text-[11px] text-gray-300">
+                Eng Coco Cafe (Cook) & Sheraton Kuta Bali Resort (Commis Chef
+                Magang).
+              </p>
+            </div>
+          </div>
         </div>
 
-        <!-- SECTION 3: TENTANG & PENGALAMAN WORK BENTO -->
-        <div id="pengalaman" class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4">
-            
-            <!-- Widget Ringkasan Pengalaman -->
-            <div class="ios-widget p-6 rounded-[2.5rem] md:col-span-2 space-y-4">
-                <div class="flex items-center justify-between border-b border-white/10 pb-3">
-                    <h2 class="text-lg font-jakarta-extrabold text-white flex items-center gap-2">
-                        <i class="fa-solid fa-briefcase text-purple-400"></i>
-                        <span>Pengalaman Kerja</span>
-                    </h2>
-                    <span class="text-[10px] text-purple-300 bg-purple-950/80 px-2.5 py-1 rounded-full font-jakarta-bold">2021 - 2026</span>
-                </div>
+        <!-- Widget Tentang & Pendidikan -->
+        <div
+          id="tentang"
+          class="ios-widget p-6 rounded-[2.5rem] flex flex-col justify-between space-y-4"
+        >
+          <div>
+            <h2
+              class="text-lg font-jakarta-extrabold text-white mb-3 flex items-center gap-2"
+            >
+              <i class="fa-solid fa-user-gear text-purple-400"></i>
+              <span>Profil Singkat</span>
+            </h2>
+            <p class="text-xs text-gray-300 leading-relaxed">
+              Memiliki keahlian teknis penyuntingan video yang kuat
+              dikombinasikan dengan kedisiplinan dan adaptabilitas tinggi dari
+              industri hospitality.
+            </p>
+          </div>
 
-                <div class="space-y-4">
-                    <!-- PT Sekolah Trading -->
-                    <div class="p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-purple-500/30 transition">
-                        <div class="flex justify-between items-center mb-1">
-                            <h3 class="font-jakarta-bold text-white text-sm">PT SEKOLAH TRADING</h3>
-                            <span class="text-[10px] text-purple-300 font-semibold">Jun 2022 - Sekarang</span>
-                        </div>
-                        <p class="text-xs text-purple-400 font-medium mb-2">Editor Video & Film</p>
-                        <p class="text-xs text-gray-300 leading-relaxed">
-                            Mengedit konten video (Reels, TikTok), menyusun konsep visual, hook interaktif, ide konten kreatif, serta mengelola proses editing hingga finalization.
-                        </p>
-                    </div>
-
-                    <!-- Forex IMF -->
-                    <div class="p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-purple-500/30 transition">
-                        <div class="flex justify-between items-center mb-1">
-                            <h3 class="font-jakarta-bold text-white text-sm">Forex IMF / Quickpro</h3>
-                            <span class="text-[10px] text-purple-300 font-semibold">Apr 2024 - Feb 2026</span>
-                        </div>
-                        <p class="text-xs text-purple-400 font-medium mb-2">Editor Video & Film</p>
-                        <p class="text-xs text-gray-300 leading-relaxed">
-                            Memproduksi video promosi, menyempurnakan script, memimpin koordinasi alur kerja editing tim, dan menjaga quality control.
-                        </p>
-                    </div>
-
-                    <!-- Culinary -->
-                    <div class="p-4 rounded-2xl bg-white/5 border border-white/5">
-                        <h3 class="font-jakarta-bold text-white text-xs mb-1">Pengalaman Kuliner & Hospitality</h3>
-                        <p class="text-[11px] text-gray-300">
-                            Eng Coco Cafe (Cook) & Sheraton Kuta Bali Resort (Commis Chef Magang).
-                        </p>
-                    </div>
-                </div>
+          <div class="border-t border-white/10 pt-4">
+            <h3 class="text-xs font-jakarta-bold text-white mb-2">
+              Pendidikan
+            </h3>
+            <div class="space-y-2 text-xs">
+              <div>
+                <p class="font-jakarta-bold text-purple-300">
+                  MEDITERRANEAN Bali
+                </p>
+                <p class="text-[11px] text-gray-400">
+                  Food Production (2019 - 2021)
+                </p>
+              </div>
+              <div>
+                <p class="font-jakarta-bold text-purple-300">
+                  SMA Negeri 1 Pesanggaran
+                </p>
+                <p class="text-[11px] text-gray-400">IPA (2015 - 2018)</p>
+              </div>
             </div>
-
-            <!-- Widget Tentang & Pendidikan -->
-            <div id="tentang" class="ios-widget p-6 rounded-[2.5rem] flex flex-col justify-between space-y-4">
-                <div>
-                    <h2 class="text-lg font-jakarta-extrabold text-white mb-3 flex items-center gap-2">
-                        <i class="fa-solid fa-user-gear text-purple-400"></i>
-                        <span>Profil Singkat</span>
-                    </h2>
-                    <p class="text-xs text-gray-300 leading-relaxed">
-                        Memiliki keahlian teknis penyuntingan video yang kuat dikombinasikan dengan kedisiplinan dan adaptabilitas tinggi dari industri hospitality.
-                    </p>
-                </div>
-
-                <div class="border-t border-white/10 pt-4">
-                    <h3 class="text-xs font-jakarta-bold text-white mb-2">Pendidikan</h3>
-                    <div class="space-y-2 text-xs">
-                        <div>
-                            <p class="font-jakarta-bold text-purple-300">MEDITERRANEAN Bali</p>
-                            <p class="text-[11px] text-gray-400">Food Production (2019 - 2021)</p>
-                        </div>
-                        <div>
-                            <p class="font-jakarta-bold text-purple-300">SMA Negeri 1 Pesanggaran</p>
-                            <p class="text-[11px] text-gray-400">IPA (2015 - 2018)</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
 
-        <!-- SECTION 4: iOS CONTROL CENTER CONTACT WIDGETS -->
-        <div id="kontak" class="pt-4">
-            <div class="ios-widget p-6 md:p-8 rounded-[2.5rem]">
-                <h2 class="text-lg font-jakarta-extrabold text-white mb-4 text-center">Hubungi Saya</h2>
-                
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <a href="https://wa.me/6285738093275" target="_blank" class="ios-btn p-4 rounded-2xl bg-green-500/10 border border-green-500/20 hover:border-green-500/50 flex items-center gap-3 transition">
-                        <i class="fa-brands fa-whatsapp text-2xl text-green-400"></i>
-                        <div>
-                            <p class="text-[10px] text-gray-400 font-jakarta-bold uppercase">WhatsApp</p>
-                            <p class="text-xs font-jakarta-bold text-white">+62 857 3809 3275</p>
-                        </div>
-                    </a>
+      <!-- SECTION 4: iOS CONTROL CENTER CONTACT WIDGETS -->
+      <div id="kontak" class="pt-4">
+        <div class="ios-widget p-6 md:p-8 rounded-[2.5rem]">
+          <h2
+            class="text-lg font-jakarta-extrabold text-white mb-4 text-center"
+          >
+            Hubungi Saya
+          </h2>
 
-                    <a href="mailto:chndralif0@gmail.com" class="ios-btn p-4 rounded-2xl bg-purple-500/10 border border-purple-500/20 hover:border-purple-500/50 flex items-center gap-3 transition">
-                        <i class="fa-solid fa-envelope text-2xl text-purple-400"></i>
-                        <div class="overflow-hidden">
-                            <p class="text-[10px] text-gray-400 font-jakarta-bold uppercase">Email</p>
-                            <p class="text-xs font-jakarta-bold text-white truncate">chndralif0@gmail.com</p>
-                        </div>
-                    </a>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <a
+              href="https://wa.me/6285738093275"
+              target="_blank"
+              class="ios-btn p-4 rounded-2xl bg-green-500/10 border border-green-500/20 hover:border-green-500/50 flex items-center gap-3 transition"
+            >
+              <i class="fa-brands fa-whatsapp text-2xl text-green-400"></i>
+              <div>
+                <p
+                  class="text-[10px] text-gray-400 font-jakarta-bold uppercase"
+                >
+                  WhatsApp
+                </p>
+                <p class="text-xs font-jakarta-bold text-white">
+                  +62 857 3809 3275
+                </p>
+              </div>
+            </a>
 
-                    <a href="https://drive.google.com/uc?export=download&id=1sEsAyS16sto6oIHlfsPj18iAt1wgiNOH" target="_blank" class="ios-btn p-4 rounded-2xl bg-pink-500/10 border border-pink-500/20 hover:border-pink-500/50 flex items-center gap-3 transition">
-                        <i class="fa-solid fa-file-pdf text-2xl text-pink-400"></i>
-                        <div>
-                            <p class="text-[10px] text-gray-400 font-jakarta-bold uppercase">Resume</p>
-                            <p class="text-xs font-jakarta-bold text-white">Unduh CV PDF</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
+            <a
+              href="https://mail.google.com/mail/u/0/?ogbl#inbox?compose=GTvVlcSDZNwlJbPpplgNjRvZdNvRPZqClHRdkkGnHrcrGlCqkxXPnJsNJwtzfzRcCvkQDVbTxNdnB"
+              class="ios-btn p-4 rounded-2xl bg-purple-500/10 border border-purple-500/20 hover:border-purple-500/50 flex items-center gap-3 transition"
+            >
+              <i class="fa-solid fa-envelope text-2xl text-purple-400"></i>
+              <div class="overflow-hidden">
+                <p
+                  class="text-[10px] text-gray-400 font-jakarta-bold uppercase"
+                >
+                  Email
+                </p>
+                <p class="text-xs font-jakarta-bold text-white truncate">
+                  chndralif0@gmail.com
+                </p>
+              </div>
+            </a>
+
+            <a
+              href="https://drive.google.com/uc?export=download&id=1sEsAyS16sto6oIHlfsPj18iAt1wgiNOH"
+              target="_blank"
+              class="ios-btn p-4 rounded-2xl bg-pink-500/10 border border-pink-500/20 hover:border-pink-500/50 flex items-center gap-3 transition"
+            >
+              <i class="fa-solid fa-file-pdf text-2xl text-pink-400"></i>
+              <div>
+                <p
+                  class="text-[10px] text-gray-400 font-jakarta-bold uppercase"
+                >
+                  Resume
+                </p>
+                <p class="text-xs font-jakarta-bold text-white">Unduh CV PDF</p>
+              </div>
+            </a>
+          </div>
         </div>
-
+      </div>
     </main>
 
     <!-- Footer -->
-    <footer class="mt-12 text-center text-xs text-gray-600 font-jakarta-bold relative z-10">
-        &copy; 2026 Chandra Alif. iOS Bento Style Portfolio.
+    <footer
+      class="mt-12 text-center text-xs text-gray-600 font-jakarta-bold relative z-10"
+    >
+      &copy; 2026 Chandra Alif. iOS Bento Style Portfolio.
     </footer>
-
-</body>
+  </body>
 </html>
