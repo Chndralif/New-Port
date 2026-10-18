@@ -48,7 +48,7 @@
       /* iOS Click / Tap Haptic Spring Animation */
       .ios-widget:active,
       .ios-btn:active {
-        transform: scale(0.95) !important;
+        transform: scale(0.98) !important;
         transition: transform 0.1s cubic-bezier(0, 0, 0.2, 1) !important;
       }
 
@@ -66,6 +66,22 @@
           );
         background-attachment: fixed;
       }
+
+      /* Custom Scrollbar untuk Modal */
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 10px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: rgba(168, 85, 247, 0.4);
+        border-radius: 10px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: rgba(168, 85, 247, 0.7);
+      }
     </style>
   </head>
   <body
@@ -77,9 +93,9 @@
         class="ios-widget px-6 py-2.5 rounded-full flex items-center justify-between gap-6 max-w-4xl w-full shadow-2xl bg-gray-950/70 border-white/10"
       >
         <a
-          href="https://drive.google.com/uc?export=download&id=1sEsAyS16sto6oIHlfsPj18iAt1wgiNOH"
-          target="_blank"
-          class="flex items-center gap-3 group"
+        href="https://drive.google.com/uc?export=download&id=1z3JiXM3jAc6FY2MDoLqUarrzP4xlnUAn"
+        target="_blank"
+        class="flex items-center gap-3 group"
         >
           <div
             class="relative w-8 h-8 rounded-full overflow-hidden border border-white/80 shadow-inner"
@@ -221,7 +237,7 @@
                 Pratinjau Hasil Karya
               </h3>
               <p class="text-xs text-gray-400">
-                Hasil Karya Bisa cek di Kolom Sebelah >
+                Hasil Karya Bisa cek di Kolom Sebelah &gt;
               </p>
             </div>
             <a
@@ -300,76 +316,121 @@
 
       <!-- SECTION 3: TENTANG & PENGALAMAN WORK BENTO -->
       <div id="pengalaman" class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4">
-        <!-- Widget Ringkasan Pengalaman -->
-        <div class="ios-widget p-6 rounded-[2.5rem] md:col-span-2 space-y-4">
+        <!-- Widget Pengalaman Kerja -->
+        <div
+          class="ios-widget p-6 md:p-8 rounded-[2.5rem] md:col-span-2 space-y-6 border border-purple-500/20 bg-purple-950/10"
+        >
           <div
-            class="flex items-center justify-between border-b border-white/10 pb-3"
+            class="flex items-start justify-between border-b border-white/5 pb-4"
           >
-            <h2
-              class="text-lg font-jakarta-extrabold text-white flex items-center gap-2"
-            >
-              <i class="fa-solid fa-briefcase text-purple-400"></i>
-              <span>Pengalaman Kerja</span>
-            </h2>
+            <div>
+              <h2
+                class="text-xl md:text-2xl font-jakarta-extrabold text-white flex items-center gap-3"
+              >
+                <i class="fa-solid fa-briefcase text-purple-400"></i>
+                <span>Pengalaman Kerja</span>
+              </h2>
+              <p class="text-xs text-gray-400 mt-1">
+                Beberapa Pengalaman Pekerjaan
+              </p>
+            </div>
             <span
-              class="text-[10px] text-purple-300 bg-purple-950/80 px-2.5 py-1 rounded-full font-jakarta-bold"
-              >2021 - 2026</span
+              class="text-xs text-purple-300 bg-purple-900/60 border border-purple-500/30 px-3 py-1 rounded-full font-jakarta-bold shrink-0"
             >
+              2021 – 2026
+            </span>
           </div>
 
           <div class="space-y-4">
-            <!-- PT Sekolah Trading -->
+            <!-- Tama Production -->
             <div
-              class="p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-purple-500/30 transition"
+              onclick="openJobModal('tama')"
+              class="ios-btn p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-purple-500/50 hover:bg-purple-900/10 transition cursor-pointer group flex items-center justify-between"
             >
-              <div class="flex justify-between items-center mb-1">
-                <h3 class="font-jakarta-bold text-white text-sm">
-                  PT SEKOLAH TRADING
-                </h3>
-                <span class="text-[10px] text-purple-300 font-semibold"
-                  >Jun 2022 - Sekarang</span
-                >
+              <div class="pr-2">
+                <div class="flex items-center gap-2 mb-1 flex-wrap">
+                  <h3
+                    class="font-jakarta-extrabold text-white text-base group-hover:text-purple-300 transition"
+                  >
+                    TAMA PRODUCTION
+                  </h3>
+                  <span
+                    class="text-[10px] text-purple-300 bg-purple-900/80 border border-purple-500/40 px-2.5 py-0.5 rounded-full font-jakarta-bold"
+                  >
+                    Klik !
+                  </span>
+                </div>
+                <p class="text-xs text-purple-400 font-medium">
+                  Editor Video & Film
+                </p>
               </div>
-              <p class="text-xs text-purple-400 font-medium mb-2">
-                Editor Video & Film
-              </p>
-              <p class="text-xs text-gray-300 leading-relaxed">
-                Mengedit konten video (Reels, TikTok,Youtube), menyusun konsep
-                visual, hook interaktif, ide konten kreatif, serta mengelola
-                proses editing hingga finalization.
-              </p>
+              <div class="flex items-center gap-3 shrink-0">
+                <span class="text-xs text-purple-300 font-jakarta-bold">
+                  Jun 2022 – Sekarang
+                </span>
+                <i
+                  class="fa-solid fa-chevron-right text-gray-400 group-hover:text-purple-400 group-hover:translate-x-1 transition text-sm"
+                ></i>
+              </div>
             </div>
 
-            <!-- Forex IMF -->
+            <!-- Forex IMF / Quickpro -->
             <div
-              class="p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-purple-500/30 transition"
+              onclick="openJobModal('forex')"
+              class="ios-btn p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-purple-500/50 hover:bg-purple-900/10 transition cursor-pointer group flex items-center justify-between"
             >
-              <div class="flex justify-between items-center mb-1">
-                <h3 class="font-jakarta-bold text-white text-sm">
-                  Forex IMF / Quickpro
-                </h3>
-                <span class="text-[10px] text-purple-300 font-semibold"
-                  >Apr 2024 - Feb 2026</span
-                >
+              <div class="pr-2">
+                <div class="flex items-center gap-2 mb-1 flex-wrap">
+                  <h3
+                    class="font-jakarta-extrabold text-white text-base group-hover:text-purple-300 transition"
+                  >
+                    FOREX IMF / QUICKPRO
+                  </h3>
+                  <span
+                    class="text-[10px] text-purple-300 bg-purple-900/80 border border-purple-500/40 px-2.5 py-0.5 rounded-full font-jakarta-bold"
+                  >
+                    Klik !
+                  </span>
+                </div>
+                <p class="text-xs text-purple-400 font-medium">
+                  Editor Video & Film
+                </p>
               </div>
-              <p class="text-xs text-purple-400 font-medium mb-2">
-                Editor Video & Film
-              </p>
-              <p class="text-xs text-gray-300 leading-relaxed">
-                Memproduksi video promosi, menyempurnakan script, memimpin
-                koordinasi alur kerja editing tim, dan menjaga quality control.
-              </p>
+              <div class="flex items-center gap-3 shrink-0">
+                <span class="text-xs text-purple-300 font-jakarta-bold">
+                  Apr 2024 – Feb 2026
+                </span>
+                <i
+                  class="fa-solid fa-chevron-right text-gray-400 group-hover:text-purple-400 group-hover:translate-x-1 transition text-sm"
+                ></i>
+              </div>
             </div>
 
-            <!-- Culinary -->
-            <div class="p-4 rounded-2xl bg-white/5 border border-white/5">
-              <h3 class="font-jakarta-bold text-white text-xs mb-1">
-                Pengalaman Kuliner & Hospitality
-              </h3>
-              <p class="text-[11px] text-gray-300">
-                Eng Coco Cafe (Cook) & Sheraton Kuta Bali Resort (Commis Chef
-                Magang).
-              </p>
+            <!-- Culinary & Hospitality -->
+            <div
+              onclick="openJobModal('culinary')"
+              class="ios-btn p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-purple-500/50 hover:bg-purple-900/10 transition cursor-pointer group flex items-center justify-between"
+            >
+              <div class="pr-2">
+                <div class="flex items-center gap-2 mb-1 flex-wrap">
+                  <h3
+                    class="font-jakarta-extrabold text-white text-base group-hover:text-purple-300 transition"
+                  >
+                    PENGALAMAN KULINER & HOSPITALITY
+                  </h3>
+                  <span
+                    class="text-[10px] text-purple-300 bg-purple-900/80 border border-purple-500/40 px-2.5 py-0.5 rounded-full font-jakarta-bold"
+                  >
+                    Klik !
+                  </span>
+                </div>
+                <p class="text-xs text-gray-300">
+                  Eng Coco Cafe & Sheraton Kuta Bali Resort
+                </p>
+              </div>
+              <i
+                class="fa-solid fa-chevron-right text-gray-400 group-hover:text-purple-400 group-hover:translate-x-1 transition text-sm shrink-0"
+              ></i>
             </div>
           </div>
         </div>
@@ -387,9 +448,20 @@
               <span>Profil Singkat</span>
             </h2>
             <p class="text-xs text-gray-300 leading-relaxed">
-              Memiliki keahlian teknis penyuntingan video yang kuat
-              dikombinasikan dengan kedisiplinan dan adaptabilitas tinggi dari
-              industri hospitality.
+              Memadukan presisi teknis dalam dunia penyuntingan video dengan
+              standar kedisiplinan dari industri hospitality, saya hadir sebagai
+              seorang profesional kreatif yang adaptif dan berorientasi pada
+              hasil. Pengalaman bertahun-tahun merancang konten visual—mulai
+              dari video editing, motion animation, hingga eksekusi materi
+              promosi digital—dibekali dengan pemahaman mendalam tentang
+              ekosistem media modern. Pengalaman kerja sebelumnya di lingkungan
+              hospitality dan layanan bertekanan tinggi mengajarkan saya arti
+              penting dari manajemen waktu yang ketat, ketahanan mental, serta
+              komunikasi tim yang solid. Karakter yang disiplin dan cepat
+              beradaptasi ini membuat saya mampu mengeksekusi ide-ide kreatif
+              menjadi hasil akhir visual yang berdampak tinggi, baik saat
+              bekerja mandiri maupun saat berkolaborasi dalam tim kreatif lintas
+              fungsi.
             </p>
           </div>
 
@@ -481,6 +553,200 @@
         </div>
       </div>
     </main>
+
+    <!-- MODAL POPUP DESKRIPSI PENGALAMAN KERJA (iOS GLASS STYLE) -->
+    <div
+      id="jobModal"
+      class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/70 backdrop-blur-md transition-opacity duration-300"
+    >
+      <div
+        class="ios-widget bg-gray-900/90 border border-white/20 rounded-[2.5rem] max-w-2xl w-full p-6 md:p-8 relative shadow-2xl overflow-hidden max-h-[85vh] flex flex-col"
+      >
+        <!-- Modal Header -->
+        <div
+          class="flex justify-between items-start border-b border-white/10 pb-4 mb-4"
+        >
+          <div>
+            <span
+              id="modalPeriod"
+              class="text-[10px] text-purple-300 bg-purple-950/80 border border-purple-500/30 px-3 py-1 rounded-full font-jakarta-bold"
+            ></span>
+            <h2
+              id="modalTitle"
+              class="text-xl md:text-2xl font-jakarta-extrabold text-white mt-2"
+            ></h2>
+            <p id="modalRole" class="text-xs text-purple-400 font-medium"></p>
+          </div>
+          <button
+            onclick="closeJobModal()"
+            class="ios-btn w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 flex items-center justify-center text-gray-300 hover:text-white transition"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <!-- Modal Content Scrollable -->
+        <div class="overflow-y-auto pr-2 space-y-4 custom-scrollbar flex-1">
+          <div
+            id="modalContentBody"
+            class="space-y-4 text-xs text-gray-300 leading-relaxed"
+          >
+            <!-- Konten deskripsi dimasukkan via JavaScript -->
+          </div>
+        </div>
+
+        <!-- Modal Footer -->
+        <div class="pt-4 border-t border-white/10 mt-4 flex justify-end">
+          <button
+            onclick="closeJobModal()"
+            class="ios-btn px-5 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-jakarta-bold text-xs"
+          >
+            Tutup
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript Modal Handler -->
+    <script>
+      const jobData = {
+        tama: {
+          title: 'TAMA PRODUCTION',
+          role: 'Editor Video & Film',
+          period: 'Jun 2022 - Sekarang',
+          isMultiple: false,
+          tasks: [
+            'Mengedit video untuk kebutuhan konten media sosial seperti Instagram Reels, TikTok, dan platform digital lainnya.',
+            'Membuat konsep visual, hook, dan opening video yang menarik untuk meningkatkan perhatian audiens.',
+            'Menyusun caption dan ide konten yang sesuai dengan karakter brand, target audiens, serta tujuan pemasaran.',
+            'Mengembangkan konten dengan gaya visual yang profesional, premium, dan konsisten dengan identitas brand.',
+            'Melakukan proses editing mulai dari pemilihan footage, cutting, penyusunan alur cerita, penambahan teks, transisi, musik, hingga finalisasi video.',
+            'Menyesuaikan format dan durasi konten berdasarkan kebutuhan platform media sosial.',
+            'Memastikan kualitas visual, audio, dan hasil akhir konten sesuai dengan standar yang ditetapkan.',
+            'Mendukung kebutuhan promosi digital dan branding melalui konten kreatif yang informatif, menarik, dan relevan.',
+            'Mengelola revisi serta memastikan konten selesai sesuai deadline dan kebutuhan proyek.',
+          ],
+        },
+        forex: {
+          title: 'FOREX IMF / QUICKPRO',
+          role: 'Editor Video & Film',
+          period: 'Apr 2024 - Feb 2026',
+          isMultiple: false,
+          tasks: [
+            'Mengedit dan memproduksi konten video untuk ForexIMF sesuai dengan kebutuhan brand, brief, dan tujuan pemasaran.',
+            'Mengembangkan dan menyempurnakan script video berdasarkan brief, kebutuhan audiens, dan arahan konten.',
+            'Mengelola dan mendukung kebutuhan konten media sosial, termasuk perencanaan dan pengembangan konten.',
+            'Mengkoordinasikan alur kerja editing antara tim internal dan pihak ForexIMF untuk memastikan proyek berjalan sesuai target dan kebutuhan klien.',
+            'Memimpin dan mengawasi tim editor dalam proses editing, revisi, quality control, dan menjaga konsistensi kualitas video.',
+            'Menjadi penghubung utama antara perusahaan dan ForexIMF dalam menyampaikan brief, feedback, revisi, serta kebutuhan produksi.',
+            'Menerjemahkan kebutuhan dan arahan klien menjadi tugas yang jelas bagi tim editing.',
+            'Melakukan pengecekan akhir terhadap hasil video sebelum diserahkan kepada klien.',
+            'Membantu menyelesaikan kendala dalam proses produksi serta meningkatkan alur kerja tim editing.',
+          ],
+        },
+        culinary: {
+          title: 'PENGALAMAN KULINER & HOSPITALITY',
+          role: 'Cook & Commis Chef',
+          period: '2019 - 2022',
+          isMultiple: true,
+          subJobs: [
+            {
+              company: 'Eng Coco Cafe',
+              period: 'May 2021 - Jun 2022',
+              tasks: [
+                'Memasak.',
+                'Mempersiapkan hal yang perlu dimasak.',
+                'Mempersiapkan hal-hal yang perlu di-restock dan diolah untuk hari selanjutnya.',
+              ],
+            },
+            {
+              company: 'Sheraton Kuta Bali Resort',
+              period: 'Sep 2021 - Feb 2021',
+              tasks: [
+                'Membantu chef untuk mempercepat pekerjaan.',
+                'Service di banquet.',
+                'Merapikan banquet sehingga terlihat indah.',
+              ],
+            },
+          ],
+        },
+      };
+
+      function openJobModal(key) {
+        const data = jobData[key];
+        if (!data) return;
+
+        document.getElementById('modalTitle').innerText = data.title;
+        document.getElementById('modalRole').innerText = data.role;
+        document.getElementById('modalPeriod').innerText = data.period;
+
+        const contentContainer = document.getElementById('modalContentBody');
+        contentContainer.innerHTML = '';
+
+        if (data.isMultiple) {
+          // Jika memiliki sub-perusahaan (Kuliner & Hospitality)
+          data.subJobs.forEach((sub, index) => {
+            const subDiv = document.createElement('div');
+            subDiv.className =
+              index > 0 ? 'pt-4 border-t border-white/10 mt-4' : '';
+
+            let htmlTasks = '';
+            sub.tasks.forEach((t) => {
+              htmlTasks += `
+                <li class="flex items-start gap-2.5">
+                  <i class="fa-solid fa-circle-check text-purple-400 text-sm mt-0.5 shrink-0"></i>
+                  <span>${t}</span>
+                </li>
+              `;
+            });
+
+            subDiv.innerHTML = `
+              <div class="flex justify-between items-center mb-2">
+                <h4 class="font-jakarta-bold text-white text-sm">${sub.company}</h4>
+                <span class="text-[10px] text-purple-300 bg-purple-950/80 px-2.5 py-0.5 rounded-full font-semibold border border-purple-500/30">${sub.period}</span>
+              </div>
+              <ul class="space-y-2">${htmlTasks}</ul>
+            `;
+            contentContainer.appendChild(subDiv);
+          });
+        } else {
+          // List standar (Tama & Forex)
+          const h3 = document.createElement('h3');
+          h3.className =
+            'text-xs font-jakarta-bold uppercase tracking-wider text-purple-300';
+          h3.innerText = 'Tanggung Jawab & Deskripsi Pekerjaan:';
+          contentContainer.appendChild(h3);
+
+          const ul = document.createElement('ul');
+          ul.className = 'space-y-2.5';
+          data.tasks.forEach((task) => {
+            const li = document.createElement('li');
+            li.className = 'flex items-start gap-2.5';
+            li.innerHTML = `
+              <i class="fa-solid fa-circle-check text-purple-400 text-sm mt-0.5 shrink-0"></i>
+              <span>${task}</span>
+            `;
+            ul.appendChild(li);
+          });
+          contentContainer.appendChild(ul);
+        }
+
+        document.getElementById('jobModal').classList.remove('hidden');
+      }
+
+      function closeJobModal() {
+        document.getElementById('jobModal').classList.add('hidden');
+      }
+
+      // Close Modal saat mengklik di luar area modal
+      document
+        .getElementById('jobModal')
+        .addEventListener('click', function (e) {
+          if (e.target === this) {
+            closeJobModal();
+          }
+        });
+    </script>
 
     <!-- Footer -->
     <footer
